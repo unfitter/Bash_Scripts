@@ -1,0 +1,12 @@
+#!/bin/bash
+red=$(tput setaf 1)
+green=$(tput setaf 2)
+reset=$(tput sgr0)
+echo "Enter a string"
+read string
+if [[ ${#string} -gt 500 ]]
+then
+echo "${red}${string}${reset}" | grep -o '[^ ,]' | tr -d '\n'
+else
+echo "${green}${string}${reset}" | grep -o '[^ ,]' | tr -d '\n'
+fi
