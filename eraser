@@ -7,7 +7,7 @@ read string
 length=$(echo "$string" | grep -o '[^ ,]'  | wc -l)
 if [ "$length" -gt 500 ]
 then
-echo "${red}${$length}${reset}" 
+echo "${red}${length}${reset}" 
 else
 echo "${green}${length}${reset}"
 fi
