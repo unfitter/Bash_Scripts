@@ -4,9 +4,10 @@ green=$(tput setaf 2)
 reset=$(tput sgr0)
 echo "Enter a string"
 read string
-if [[ ${#string} -gt 500 ]]
+length=$(echo "$string" | grep -o '[^ ,]'  | wc -l)
+if [ "$length" -gt 500 ]
 then
-echo "${red}${string}${reset}" | grep -o '[^ ,]' | tr -d '\n'
+echo "${red}${$length}${reset}" 
 else
-echo "${green}${string}${reset}" | grep -o '[^ ,]' | tr -d '\n'
+echo "${green}${length}${reset}"
 fi
